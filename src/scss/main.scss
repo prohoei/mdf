@@ -1,0 +1,14 @@
+// main.scss
+@import "_variables.scss";
+@import "_mixins.scss";
+
+$font-stack: 'Avenir', Helvetica, Arial, sans-serif;
+$primary-color: #333;
+#app {
+    font: 100% $font-stack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $primary-color;
+    margin-top: 60px;
+  }

@@ -2,7 +2,7 @@
     <footer class="footer main-footer">
         <div class="main-footer__container">
             <div class="main-footer__element">
-                <h3>Questions?</h3>
+                <h3 class="main-footer__subtitle">Questions?</h3>
                 <ul class="main-footer__list">
                     <li>
                         <a class="main-footer__link" href="#">Help</a>
@@ -16,7 +16,7 @@
                 </ul>
             </div>
             <div class="main-footer__element">
-                <h3>Where to buy?</h3>
+                <h3 class="main-footer__subtitle">Where to buy?</h3>
                 <ul class="main-footer__list">
                     <li>
                         <a class="main-footer__link" href="#">Store Locator</a>
@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <div class="main-footer__element">
-                <h3>About us</h3>
+                <h3 class="main-footer__subtitle">About us</h3>
                 <ul class="main-footer__list">
                     <li>
                         <a class="main-footer__link" href="#">Our Story</a>

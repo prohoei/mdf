@@ -4,9 +4,7 @@
 
 // Homepage Grid
 .homepage{
-    width: 100%;
-    margin: 0 auto;
-
+    margin: 0;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: 
@@ -15,30 +13,47 @@
     
     > *{
         @include bg($secondary-color);
-        padding: 10px;
     }
 
     .banner{
         grid-area: banner;
+        width: 100%;
+        overflow-x: hidden;
         .carousel-cell{
-            width: 100%!important;
-            height: 500px!important;
+            height: 500px;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            .left-arrow{
+                margin: 400px auto 0 auto;
+                position: absolute;
+                font-size: 4em;
+                color: $secondary-color;
+                padding-left: 25px;
+                cursor: pointer;
+            }
+            .right-arrow{
+                margin: 400px auto 0 auto;
+                font-size: 4em;
+                float: right;
+                color: $secondary-color;
+                padding-right: 25px;
+                cursor: pointer;
+            }
         }
     }
 }
 
 @media (max-width: 800px){
-    #app{
+    .homepage{
         grid-template-columns: 2fr 4fr;
         grid-template-areas: 
-            "head"
-            "main"
-            "footer";
+            "banner banner";
     }
 }
 
-@media (max-width: 400px){
-    #app{
+@media (max-width: 480px){
+    .homepage{
         display: block;
 
         > *{

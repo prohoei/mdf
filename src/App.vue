@@ -4,7 +4,7 @@
     <my-header></my-header>
 
     <main>
-        <router-view></router-view>
+      <router-view></router-view>
     </main>
 
     <my-footer></my-footer>
@@ -24,6 +24,6 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import 'scss/style.scss';
 </style>

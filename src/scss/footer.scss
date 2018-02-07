@@ -2,55 +2,52 @@
 @import "_mixins.scss";
 
 .main-footer {
-	width: 100%;
+	max-width: 1200px;
 	@include bg($primary-color!important);
 	color: $secondary-color;
-	display: grid;
-    grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
-    grid-template-areas: 
-        "el el el img img";
-        grid-gap: 10px;
-
+	padding: 20px 100px;
 	.main-footer__container {
-		padding: 0 15px;
+		display: grid;
+		grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
+			grid-gap: 1em;
+			grid-auto-rows: minmax(200px, auto);
 		.main-footer__element{
-			grid-area: el;
+			padding-top: 40px;
+			.main-footer__subtitle{
+				font-size: .8em;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
 			.main-footer__list{
 				list-style-type: none;
 				.main-footer__link{
-					color: $primary-color;
+					color: #777;
+					text-decoration: none;
+					font-size: .8em;
+					&:hover{
+						text-decoration: underline;
+					}
 				}
 			}
 		}
-		
-		.main-footer__image-container{
-			grid-area: img;
-			.main-footer__img{
-				text-align: center;
-			}
+
+		.main-footer__img{
+			padding-top: 60px;
+			margin: 0 auto;
 		}
+
 	}
 }
 
 @media (max-width: 800px){
-    .main-footer{
-		text-align: center;
-        grid-template-columns: 12fr;
-        grid-template-areas: 
-            "el"
-            "el"
-			"el"
-			"img"
-			"img";
-    }
-}
+	.main-footer{
+		padding: 20px;    
+		.main-footer__container{
+			display: block!important;
+			>div{
+				padding: 15px;
+			}
+    	}
+	}
 
-@media (max-width: 400px){
-    .main-footer{
-        display: block;
-
-        > *{
-            margin-bottom: 10px;
-        }
-    }
 }

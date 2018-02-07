@@ -2,16 +2,16 @@
     <div class="homepage">
         <flickity class="banner" ref="flickity" :options="flickityOptions">
             <div class="carousel-cell" style="background: url('static/slider/slider1.jpg') center center no-repeat">
-                <span @click="previous()">back</span>
-                <span @click="next()">forward</span>
+                <span @click="previous()" class="left-arrow">&#8656;</span>
+                <span @click="next()" class="right-arrow">&#8658;</span>
             </div>
             <div class="carousel-cell" style="background: url('static/slider/slider2.jpg') center center no-repeat">
-                <span @click="previous()">back</span>
-                <span @click="next()">forward</span>
+                <span @click="previous()" class="left-arrow">&#8656;</span>
+                <span @click="next()" class="right-arrow">&#8658;</span>
             </div>
             <div class="carousel-cell" style="background: url('static/slider/slider3.jpg') center center no-repeat">
-                <span @click="previous()">back</span>
-                <span @click="next()">forward</span>
+                <span @click="previous()" class="left-arrow">&#8656;</span>
+                <span @click="next()" class="right-arrow">&#8658;</span>
             </div>
         </flickity>
 

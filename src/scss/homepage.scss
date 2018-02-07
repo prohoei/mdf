@@ -1,0 +1,48 @@
+// main.scss
+@import "_variables.scss";
+@import "_mixins.scss";
+
+// Homepage Grid
+.homepage{
+    width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: 
+        "banner";
+        grid-gap: 10px;
+    
+    > *{
+        @include bg($secondary-color);
+        padding: 10px;
+    }
+
+    .banner{
+        grid-area: banner;
+        .carousel-cell{
+            width: 100%!important;
+            height: 500px!important;
+        }
+    }
+}
+
+@media (max-width: 800px){
+    #app{
+        grid-template-columns: 2fr 4fr;
+        grid-template-areas: 
+            "head"
+            "main"
+            "footer";
+    }
+}
+
+@media (max-width: 400px){
+    #app{
+        display: block;
+
+        > *{
+            margin-bottom: 10px;
+        }
+    }
+}

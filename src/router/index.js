@@ -1,46 +1,67 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Welcome from '@/components/Welcome'
-import Shop from '@/components/Shop'
-import Error404 from '@/components/Error404'
+
+import Homepage from '@/components/Homepage'
+import Collection from '@/components/Collection'
+import Product from '@/components/Product'
+import Contact from '@/components/Contact'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'welcome',
-      component: Welcome,
+      path: '/collection',
+      component: Collection,
       meta: {
-        title: 'Home Page',
+        title: 'Collection - Le Shop',
         metaTags: [
           {
-            name: 'description',
-            content: 'The home page of our example app.'
-          },
-          {
-            property: 'og:description',
-            content: 'The home page of our example app.'
+            name: 'Collection page',
+            content: 'The collection page of Le Shop.'
           }
         ]
       }
     },
     {
-      path: '/shop',
-      name: 'shop',
-      component: Shop,
+      path: '/collection/:productId',
+      component: Product,
       meta: {
-        title: 'Shop Page'
+        title: 'Product - Le Shop',
+        metaTags: [
+          {
+            name: 'Product page',
+            content: 'The product page of Le Shop.'
+          }
+        ]
       }
     },
-    { 
-      path: '404',
-      component: Error404
+    {
+      path: '/contact',
+      component: Contact,
+      meta: {
+        title: 'Contact Page - Le Shop',
+        metaTags: [
+          {
+            name: 'Contact page',
+            content: 'The contact page of Le Shop.'
+          }
+        ]
+      }
     },
-    { 
-      path: '*',
-      redirect: '404'
+    {
+      path: '/',
+      component: Homepage,
+      meta: {
+        title: 'Home Page - Le Shop',
+        metaTags: [
+          {
+            name: 'Welcome page',
+            content: 'The home page of Le Shop.'
+          }
+        ]
+      }
     }
   ]
 })

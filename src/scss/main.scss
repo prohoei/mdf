@@ -2,13 +2,53 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
-$font-stack: 'Avenir', Helvetica, Arial, sans-serif;
-$primary-color: #333;
-#app {
-    font: 100% $font-stack;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: $primary-color;
-    margin-top: 60px;
-  }
+*{
+    box-sizing: border-box;
+}
+
+*, html{
+    margin: 0;
+    padding: 0;
+}
+
+// Base Grid
+#app{
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: 
+        "head"
+        "main"
+        "footer";
+        grid-gap: 10px;
+    
+    > *{
+        background: $secondary-color;
+        padding: 10px;
+    }
+}
+
+.main-header{
+    grid-area: head;
+}
+
+main{
+    grid-area: main;
+}
+
+.main-footer{
+    grid-area: footer;
+}
+
+@media (max-width: 400px){
+    #app{
+        display: block;
+
+        > *{
+            margin-bottom: 10px;
+        }
+    }
+}

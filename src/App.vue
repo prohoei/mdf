@@ -1,27 +1,29 @@
 <template>
   <div id="app">
-    <div class="example">{{ msg }}</div>
-    <router-view/>
+
+    <my-header></my-header>
+
+    <main>
+        <router-view></router-view>
+    </main>
+
+    <my-footer></my-footer>
+
   </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      msg: 'Hello there'
+  import Header from '@/components/Header.vue'
+  import Footer from '@/components/Footer.vue'
+
+  export default {
+    components: {
+      'my-header': Header,
+      'my-footer': Footer
     }
-  }
-}
+  };
 </script>
 
 <style lang="scss" scoped>
-   @import 'scss/main.scss'
+  @import 'scss/style.scss';
 </style>
-
-<!--
-  Src Imports
-<template src="./template.html"></template>
-<style src="./style.css"></style>
-<script src="./script.js"></script>
--->

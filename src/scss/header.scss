@@ -1,0 +1,55 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.main-header {
+	width: 100%;
+	color: $secondary-color;
+	display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
+    grid-template-areas: 
+        "el el el img img";
+        grid-gap: 10px;
+
+	.main-header__container {
+		padding: 0 15px;
+		.main-header__element{
+			grid-area: el;
+			.main-header__list{
+				list-style-type: none;
+				.main-header__link{
+					color: $primary-color;
+				}
+			}
+		}
+		
+		.main-header__image-container{
+			grid-area: img;
+			.main-header__img{
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px){
+    .main-header{
+		text-align: center;
+        grid-template-columns: 12fr;
+        grid-template-areas: 
+            "el"
+            "el"
+			"el"
+			"img"
+			"img";
+    }
+}
+
+@media (max-width: 400px){
+    .main-header{
+        display: block;
+
+        > *{
+            margin-bottom: 10px;
+        }
+    }
+}

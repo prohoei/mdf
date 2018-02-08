@@ -15,20 +15,38 @@
             </div>
         </flickity>
 
-        <products-elements class="products"></products-elements>
+        <div>
+            <tabs>
+                <tab name="First tab">
+                    <h2>First tab content</h2>
+                    <products-elements class="products"></products-elements>
+                </tab>
+                <tab name="Second tab">
+                    <h2>Second tab content</h2>
+                    <products-elements class="products"></products-elements>
+                </tab>
+                <tab name="Third tab">
+                    <h2>Third tab content</h2>
+                    <products-elements class="products"></products-elements>
+                </tab>
+            </tabs>
+        </div>
+
     </div>
 </template>
 
 <script>
     import Products from '@/components/Homepage-products.vue'
     import Flickity from 'vue-flickity'
+    import { Tabs, Tab } from 'vue-tabs-component'
 
     export default {
         components: {
             'products-elements': Products,
-            Flickity
+            Flickity,
+            'tabs': Tabs,
+            'tab': Tab
         },
-
         data() {
             return {
                 flickityOptions: {
@@ -41,7 +59,6 @@
                 }
             }
         },
-
         methods: {
             next() {
                 this.$refs.flickity.next();

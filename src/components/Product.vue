@@ -5,6 +5,7 @@
                 <img v-bind:src="'../static/images/' + product.img" v-bind:alt="product.name + ' image'" width="200">
                 <p>{{ product.name }}</p>
                 <p>Product ID is {{ $route.params.productId }}</p>
+                <button @click="product.quantity += 1">Læg i kurv</button>
             </div>
         </div>
         <button @click="goHome">Go Home</button>
@@ -25,14 +26,13 @@
 </template>
 
 <script>
-    import Vue from 'vue'
     import { Tabs, Tab } from 'vue-tabs-component'
-    import { Products } from '../data/products.js'
-
-    Vue.component('tabs', Tabs);
-    Vue.component('tab', Tab);
 
     export default {
+        components: {
+            'tabs': Tabs,
+            'tab': Tab
+        },
         methods: {
             goHome() {
                 this.$router.push('/');
@@ -48,6 +48,7 @@
                         category: 'women',
                         sale: true,
                         article: 'shoe',
+                        quantity: 0,
                         img: 'shoe1.png'
                     },
                     {
@@ -57,6 +58,7 @@
                         category: 'women',
                         sale: false,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'jacket1.png'
                     },
                     {
@@ -66,6 +68,7 @@
                         category: 'men',
                         sale: true,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'jacket2.png'
                     },
                     {
@@ -75,6 +78,7 @@
                         category: 'men',
                         sale: true,
                         article: 'hats',
+                        quantity: 0,
                         img: 'hat1.png'
                     },
                     {
@@ -84,6 +88,7 @@
                         category: 'women',
                         sale: false,
                         article: 'sweater',
+                        quantity: 0,
                         img: 'sweater1.png'
                     },
                     {
@@ -93,6 +98,7 @@
                         category: 'men',
                         sale: false,
                         article: 'shirt',
+                        quantity: 0,
                         img: 'shirt1.png'
                     },
                     {
@@ -102,16 +108,8 @@
                         category: 'men',
                         sale: false,
                         article: 'sweater',
+                        quantity: 0,
                         img: 'sweater2.png'
-                    },
-                    {
-                        id: '08',
-                        name: 'Cotton Band-collar Blouse',
-                        price: 49.99,
-                        category: 'men',
-                        sale: false,
-                        article: 'shirt',
-                        img: 'shirt2.png'
                     },
                     {
                         id: '08',
@@ -120,6 +118,7 @@
                         category: 'women',
                         sale: true,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'jacket3.png'
                     },
                     {
@@ -129,6 +128,7 @@
                         category: 'women',
                         sale: false,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'jacket4.png'
                     },
                     {
@@ -138,6 +138,7 @@
                         category: 'women',
                         sale: false,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'sweater4.png'
                     },
                     {
@@ -147,11 +148,37 @@
                         category: 'men',
                         sale: true,
                         article: 'jacket',
+                        quantity: 0,
                         img: 'sweater5.png'
+                    },
+                    {
+                        "id": "12",
+                        "name": "Camo Fang Backpack Jungle",
+                        "price": 59.99,
+                        "category": "women",
+                        "sale": true,
+                        "article": "jacket",
+                        "quantity": 0,
+                        "img": "jacket3.png"
                     }
                 ]
 
             }
         }
+        /*
+        created() {
+            fetch('static/data/products.json')
+            .then(response => response.json())
+            .then(json => {
+                this.products = json.products
+            })
+        },
+        data() {
+            return {
+                products: []
+            }
+        }
+        */
     }
+
 </script>

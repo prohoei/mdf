@@ -2,7 +2,7 @@
     <header class="header main-header" v-scroll-class>
         <div class="main-header__logo">
             <router-link to="/">
-                <img class="main-footer__img" src="static/logo.png" alt="logo">
+                <img class="main-footer__img" src="/static/logo.png" alt="logo">
             </router-link>
         </div>
         <nav class="main-header__nav">

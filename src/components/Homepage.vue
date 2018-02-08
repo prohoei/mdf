@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import Products from '@/components/Homepage-products.vue'
+    import Products from '@/components/HomepageProducts.vue'
     import Flickity from 'vue-flickity'
     import { Tabs, Tab } from 'vue-tabs-component'
 

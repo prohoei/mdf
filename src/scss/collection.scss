@@ -1,19 +1,47 @@
 .collection{
-    display: grid;
-    grid-template-columns: 12fr;
-    grid-template-areas: 
-        "banner";
-        grid-gap: 10px;
-    
-    > *{
-        @include bg($secondary-color);
-    }
-
     .banner{
         grid-area: banner;
         height: 500px;
         width: 100%;
         max-width: 1200px;
         overflow-x: hidden;
+    }
+
+    .products{
+        -moz-transition: height 0.3s $cubic;
+        -o-transition: height 0.3s $cubic;
+        -webkit-transition: height 0.3s $cubic;
+        transition: height 0.3s $cubic;
+        display: grid;
+        grid-template-columns: repeat(4, 3fr);
+        grid-gap: 1em;
+        div{
+            .product-link{
+                font-size: .8em;
+                color: $primary-color;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 10px;
+                img:hover{
+                    transform: scale(1.1);
+                }
+            }
+            button{
+                background-color: $secondary-color;
+                border: 1px solid $primary-color;
+                padding: 10px;
+                width: 130px;
+                margin-left: 10px;
+                font-weight: bold;
+                font-size: .7em;
+                cursor: pointer;
+                &:hover{
+                    background-color: #ddd;
+                }
+                &:active, &:focus{
+                    outline: none;
+                }
+            }
+        }
     }
 }

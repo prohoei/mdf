@@ -13,6 +13,30 @@
     padding: 0;
 }
 
+h1, h2, h3, h4, h5{
+    text-transform: uppercase;
+}
+
+.ten-12{
+    padding: 40px 100px;
+}
+
+.eight-12{
+    padding: 40px 200px;
+}
+
+.p-0{
+    padding: 0;
+}
+
+.m-0{
+    margin: 0;
+}
+
+section{
+    margin: 60px 0;
+}
+
 // Base Grid
 #app{
     max-width: 1200px;
@@ -25,7 +49,6 @@
         "head"
         "main"
         "footer";
-    
     > *{
         background: $secondary-color;
     }
@@ -41,8 +64,18 @@ main{
     max-width: 1200px;
 }
 
-.main-footer{
+.footer-wrapper{
     grid-area: footer;
+}
+
+@media (max-width: 800px){
+    .ten-12, .eight-12{
+        padding: 40px 15px;
+    }
+
+    section{
+        margin: 20px 0;
+    }
 }
 
 @media (max-width: 480px){
@@ -51,7 +84,7 @@ main{
     }
     
     #app{
-        display: block;
+        display: block!important;
 
         > *{
             margin-bottom: 10px;

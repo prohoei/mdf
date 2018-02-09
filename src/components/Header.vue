@@ -42,11 +42,11 @@
 </template>
 
 <script>
-    import VueScrollClass from 'vue-scroll-class'
+import VueScrollClass from 'vue-scroll-class'
 
-    export default {
-        directives: {
-            'scroll-class': VueScrollClass
-        }
+export default {
+    directives: {
+        'scroll-class': VueScrollClass
     }
+}
 </script>

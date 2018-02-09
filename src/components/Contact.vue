@@ -33,44 +33,40 @@
             <h1 class="submitted">Form submitted successfully!</h1>
         </div>
 
-        </section>
-        </section>
-    </div>
-
     </div>
 </template>
 
 <script>
-    import Vue from 'vue'
-    import VeeValidate from 'vee-validate'
+import Vue from 'vue'
+import VeeValidate from 'vee-validate'
 
-    Vue.use(VeeValidate);
+Vue.use(VeeValidate);
 
-    VeeValidate.Validator.extend('passphrase', {
-        getMessage: field => 'Sorry dude, wrong pass phrase.',
-        validate: value => value.toUpperCase() == 'Demogorgon'.toUpperCase()
-    });
+VeeValidate.Validator.extend('passphrase', {
+    getMessage: field => 'Sorry dude, wrong pass phrase.',
+    validate: value => value.toUpperCase() == 'Demogorgon'.toUpperCase()
+});
 
-    export default {
-        data() {
-            return {
-                email: '',
-                name: '',
-                subject: '',
-                message: '',
-                formSubmitted: false
+export default {
+    data() {
+        return {
+            email: '',
+            name: '',
+            subject: '',
+            message: '',
+            formSubmitted: false
+        }
+    },
+    methods: {
+        validateBeforeSubmit(e) {
+            this.$validator.validateAll();
+            if (!this.errors.any()) {
+                this.submitForm()
             }
         },
-        methods: {
-            validateBeforeSubmit(e) {
-                this.$validator.validateAll();
-                if (!this.errors.any()) {
-                    this.submitForm()
-                }
-            },
-            submitForm() {
-                this.formSubmitted = true
-            }
+        submitForm() {
+            this.formSubmitted = true
         }
     }
+}
 </script>

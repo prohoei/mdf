@@ -11,7 +11,7 @@
 	max-width: 1200px;
 	top: 0;
 	height: 100px;
-	z-index: 2;
+	z-index: 99;
 	background: transparent!important;
 	color: $secondary-color;
 	display: grid;
@@ -149,21 +149,19 @@
 	}
     .main-header{
 		font-size: .7em;
-		>div{
-			display: inline-block;
-		}
+		display: block;
 		.main-header__logo{
 			.main-footer__img{
-				width: 80%;
+				width: 40%;
 			}
 		}
 		.main-header__list{
-			padding: 28px 5px 0 0!important;
-			float: left!important;
+			margin-top: -62px;
+			padding: 28px 10px 0 0!important;
 		}
 		&.sticky{
 			.main-header__logo{
-				padding: 20px 0 0 10px;
+				padding: 20px 10px 0 10px!important;
 			}
 			.main-header__list{
 				padding: 28px 30px 0 0;

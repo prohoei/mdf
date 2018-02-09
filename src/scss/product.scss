@@ -1,0 +1,23 @@
+.change-bg{
+    background-color: #333;
+}
+
+.product{
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: 
+        "banner";
+        grid-gap: 10px;
+    
+    > *{
+        @include bg($secondary-color);
+    }
+
+    .banner{
+        grid-area: banner;
+        height: 200px;
+        width: 100%;
+        max-width: 1200px;
+        overflow-x: hidden;
+    }
+}

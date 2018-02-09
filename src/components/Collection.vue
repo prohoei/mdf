@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="collection">
+        <div class="banner" style="background: url('static/slider/slider4.jpg') center center no-repeat"></div>
         <products-elements></products-elements>
     </div>
 </template>

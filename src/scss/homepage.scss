@@ -4,21 +4,10 @@
 
 // Homepage Grid
 .homepage{
-    margin: 0;
-    display: grid;
-    grid-template-columns: 12fr;
-    grid-template-areas: 
-        "banner";
-        grid-gap: 10px;
-    
-    > *{
-        @include bg($secondary-color);
-    }
-
     .banner{
         grid-area: banner;
         width: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
         .carousel-cell{
             height: 500px;
             width: 100%;
@@ -42,22 +31,96 @@
             }
         }
     }
+
+    .productSale{
+        grid-area: products;
+        text-align: center;
+        .products{
+            display: grid;
+            grid-template-columns: repeat(4, 3fr);
+            grid-gap: 1em;
+            padding: 40px 100px;
+        }
+        .tabs-component-tabs{
+            margin: 0 auto;
+            .tabs-component-tab{
+                list-style-type: none;
+                display: inline-block;
+                padding: 15px;
+                margin: 0 10px;
+                .tabs-component-tab-a{
+                    text-decoration: none;
+                    color: $primary-color;
+                    font-weight: bold;
+                }    
+                &.is-active{
+                    font-weight: 300;
+                    display: inline-block;
+                    padding-bottom: 8px;
+                    position: relative;
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        width: 40%;
+                        height: 1px;
+                        bottom: 0;
+                        left: 30%;
+                        border-bottom: 3px solid $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .citat{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        background-color: $theme-color;
+        color: $secondary-color;
+        padding: 40px 0;
+        .carousel-cell{
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 200px;
+            h3{
+                font-size: 1em;
+                padding: 10px 0;
+            }
+            p{
+                font-style: italic;
+                font-size: .8em;
+            }
+        }
+    }
 }
 
 @media (max-width: 800px){
-    .homepage{
-        grid-template-columns: 2fr 4fr;
-        grid-template-areas: 
-            "banner banner";
+    .productSale .products{
+        padding: 40px 15px;
     }
 }
 
 @media (max-width: 480px){
-    .homepage{
-        display: block;
-
-        > *{
-            margin-bottom: 10px;
+    .productSale{
+        .products{
+            display: block;
+            > *{
+                margin-bottom: 10px;
+            }
+            display: grid;
+            grid-template-columns: 12fr!important;
+            grid-gap: 1em;
+            padding: 20px 15px!important;
         }
+        .tabs-component-tab{
+            padding: 15px 0!important;
+            .tabs-component-tab-a{
+                font-size: .6em;
+            }
+        }
+    }
+    .citat .carousel-cell{
+        padding: 0 15px!important;
     }
 }

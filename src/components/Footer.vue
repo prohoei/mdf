@@ -44,10 +44,10 @@
                 </ul>
             </div>
             <div class="main-footer__image-container">
-                <img class="main-footer__img" src="static/cards.png" alt="cards">
+                <img class="main-footer__img" src="/static/cards.png" alt="cards">
             </div>
             <div class="main-footer__image-container">
-                <img class="main-footer__img" src="static/logo.png" alt="logo">
+                <img class="main-footer__img" src="/static/logo.png" alt="logo">
             </div>
         </div>
     </footer>

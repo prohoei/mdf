@@ -144,14 +144,22 @@
 }
 
 @media (max-width: 480px){
+	.main-header__toggle{
+		margin-top: 0px!important;
+	}
     .main-header{
+		font-size: .7em;
 		>div{
 			display: inline-block;
 		}
 		.main-header__logo{
 			.main-footer__img{
-				width: 100%;
+				width: 80%;
 			}
+		}
+		.main-header__list{
+			padding: 28px 5px 0 0!important;
+			float: left!important;
 		}
 		&.sticky{
 			.main-header__logo{

@@ -8,11 +8,14 @@
         <nav class="main-header__nav">
             <ul class="main-header__list">
                 <li>
-                    <router-link class="main-header__link" to="/">Login</router-link>
+                    <router-link class="main-header__link" to="/"><i class="fa fa-user"></i> Login</router-link>
                 </li>
                 <li>
-                    <router-link class="main-header__link" to="/">Items</router-link>
+                    <router-link class="main-header__link" to="/"><i class="fa fa-shopping-cart"></i> Items</router-link>
                 </li>
+                <li>
+                        <router-link class="main-header__link" to="/"><i class="fa fa-search"></i></router-link>
+                    </li>
                 <li>
                     <div class="main-header__toggle">
                         <input type="checkbox" />

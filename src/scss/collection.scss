@@ -1,0 +1,19 @@
+.collection{
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: 
+        "banner";
+        grid-gap: 10px;
+    
+    > *{
+        @include bg($secondary-color);
+    }
+
+    .banner{
+        grid-area: banner;
+        height: 500px;
+        width: 100%;
+        max-width: 1200px;
+        overflow-x: hidden;
+    }
+}

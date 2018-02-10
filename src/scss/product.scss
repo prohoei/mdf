@@ -3,21 +3,52 @@
 }
 
 .product{
-    display: grid;
-    grid-template-columns: 12fr;
-    grid-template-areas: 
-        "banner";
-        grid-gap: 10px;
-    
-    > *{
-        @include bg($secondary-color);
-    }
-
     .banner{
-        grid-area: banner;
         height: 200px;
         width: 100%;
         max-width: 1200px;
-        overflow-x: hidden;
+        text-align: center;
+        .link{
+            text-decoration: none;
+            color: $secondary-color;
+            &:hover{
+                text-decoration: underline;
+            }
+            h2{
+                padding-top: 120px;
+                font-size: 2.4em;
+                font-weight: lighter;
+                color: $secondary-color;
+            }
+        }
+
+    }
+
+    .product-info{
+        .tabs-component-tabs{
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+            .tabs-component-tab{
+                list-style-type: none;
+                display: inline-block;
+                padding: 15px;
+                margin: 0 10px;
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;                
+                &:focus{
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .banner h2{
+        padding-top: 130px!important;
+        font-size: 1.2em!important;
     }
 }

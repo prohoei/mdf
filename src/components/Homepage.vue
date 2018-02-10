@@ -52,19 +52,19 @@
 
         <section class="sale ten-12">
             <div class="big-sale">
-                <a href="#">
+                <router-link class="link" to="/collection">
                     <img src="static/slider/big-sale.jpg" alt="big sale">
-                </a>
+                </router-link>
             </div>
             <div class="mid-sale">
-                <a href="#">
+                <router-link class="link" to="/collection">
                     <img src="static/slider/mid-sale1.jpg" alt="mid sale one">
-                </a>
+                </router-link>
             </div>
             <div class="mid-sale2">
-                <a href="#">
+                <router-link class="link" to="/collection">
                     <img src="static/slider/mid-sale2.jpg" alt="mid sale two">
-                </a>
+                </router-link>
             </div>
         </section>
 

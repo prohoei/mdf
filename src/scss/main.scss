@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5{
     padding: 40px 200px;
 }
 
+.six-12{
+    padding: 40px 300px;
+}
+
 .p-0{
     padding: 0;
 }
@@ -69,7 +73,7 @@ main{
 }
 
 @media (max-width: 800px){
-    .ten-12, .eight-12{
+    .ten-12, .eight-12, .six-12{
         padding: 40px 15px;
     }
 

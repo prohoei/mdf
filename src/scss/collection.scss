@@ -4,44 +4,193 @@
         height: 500px;
         width: 100%;
         max-width: 1200px;
-        overflow-x: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        color: $secondary-color;
+        .header-container{
+            max-width: 600px;
+            margin: 0 auto;
+            h3{
+                position: relative;
+                overflow: hidden;
+                margin-top: 100px;
+                font-size: 2em;
+                font-weight: normal;
+                span {
+                    display: inline-block;
+                    vertical-align: baseline;
+                    zoom: 1;
+                    *display: inline;
+                    *vertical-align: auto;
+                    position: relative;
+                    padding: 0 20px;
+                    &:before, &:after {
+                        content: '';
+                        display: block;
+                        width: 1000px;
+                        position: absolute;
+                        top: 0.73em;
+                        border-top: 1px solid #bbb;
+                    }
+                    &:before { right: 100%; }
+                    &:after { left: 100%; }
+                }
+            } 
+        }
+        h1{
+            font-size: 3.6em;
+            padding: 5px 0 15px 0;
+        }
+        button{
+            background: transparent;
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+            padding: 15px;
+            width: 200px;
+            margin-left: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: .7em;
+            cursor: pointer;
+            &:hover{
+                background-color: $primary-color;
+            }
+            &:active, &:focus{
+                outline: none;
+            }
+        }
     }
 
-    .products{
-        -moz-transition: height 0.3s $cubic;
-        -o-transition: height 0.3s $cubic;
-        -webkit-transition: height 0.3s $cubic;
-        transition: height 0.3s $cubic;
-        display: grid;
-        grid-template-columns: repeat(4, 3fr);
-        grid-gap: 1em;
-        div{
-            .product-link{
+    .all-products{
+        padding-top: 20px;
+        .filter{
+            padding-bottom: 60px;
+            ul{
+                list-style-type: none;
                 font-size: .8em;
-                color: $primary-color;
-                text-decoration: none;
-                display: block;
-                margin-bottom: 10px;
-                img:hover{
-                    transform: scale(1.1);
-                }
-            }
-            button{
-                background-color: $secondary-color;
-                border: 1px solid $primary-color;
-                padding: 10px;
-                width: 130px;
-                margin-left: 10px;
                 font-weight: bold;
-                font-size: .7em;
-                cursor: pointer;
-                &:hover{
-                    background-color: #ddd;
-                }
-                &:active, &:focus{
-                    outline: none;
+                li{
+                    display: inline-block;
+                    padding: 0 10px;
+                    text-decoration: none;
+                    color: $primary-color;
+                    cursor: pointer;
                 }
             }
+        }
+        .products{
+            text-align: center;
+            -moz-transition: height 0.3s $cubic;
+            -o-transition: height 0.3s $cubic;
+            -webkit-transition: height 0.3s $cubic;
+            transition: height 0.3s $cubic;
+            display: grid;
+            grid-template-columns: repeat(4, 3fr);
+            grid-gap: 1em;
+            div{
+                margin-bottom: 40px;
+                .product-link{
+                    font-size: .8em;
+                    color: $primary-color;
+                    text-decoration: none;
+                    display: block;
+                    margin-bottom: 10px;
+                    img:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                button{
+                    background-color: $secondary-color;
+                    border: 1px solid $primary-color;
+                    padding: 10px;
+                    width: 130px;
+                    margin-left: 10px;
+                    font-weight: bold;
+                    font-size: .7em;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #ddd;
+                    }
+                    &:active, &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .pagination{
+            text-align: center;
+            margin-top: 20px;
+            ul{
+                list-style-type: none;
+                li{
+                    display: inline-block;
+                    padding: 0 5px;
+                    a{
+                        text-decoration: none;
+                        color: #bbb;
+                        &:hover{
+                            color: $primary-color;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                li:first-child a{
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .collection-newsletter{
+        @include bg($theme-color);
+        .news-wrapper{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-gap: 1em;
+            div{
+                button{
+                    background-color: $secondary-color;
+                    border: 1px solid $secondary-color;
+                    padding: 10px;
+                    width: 100%;
+                    margin-left: 10px;
+                    font-weight: bold;
+                    font-size: .7em;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #ddd;
+                    }
+                    &:active, &:focus{
+                        outline: none;
+                    }
+                }
+                &:first-child button{
+                    background-color: $theme-color;
+                    color: $secondary-color;
+                    &:hover{
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .banner h1{
+        font-size: 3em!important;
+    }
+    .products{
+        display: block;
+        display: grid;
+        grid-template-columns: 12fr!important;
+        grid-gap: 1em;
+    }
+    .news-wrapper{
+        display: block!important;
+        div button{
+            margin: 10px 0!important;
         }
     }
 }
